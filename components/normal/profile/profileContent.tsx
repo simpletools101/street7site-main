@@ -66,11 +66,11 @@ const ProfileContent: React.FC = () => {
              * Check for authenticated User.
              */
             if (customer && customer != null) {
-                setIsLoggedIn(true);
+                setIsLoggedIn(true)
                 setUserDetails({
-                    userEmail : customer.email,
-                    userName : `${customer.firstName}\t ${customer.lastName}`,
-                    userImage : null
+                    userEmail: customer.email,
+                    userName: `${customer.firstName}\t ${customer.lastName}`,
+                    userImage: null,
                 })
             } else {
                 setIsLoggedIn(false)
@@ -80,12 +80,7 @@ const ProfileContent: React.FC = () => {
     }, [])
 
     const handleLogout = async () => {
-        // await authClient.signOut().then((success) => {
-        //     if (success) {
-        //         setIsLoggedIn(false)
-        //         router.push('/')
-        //     }
-        // })
+        
     }
 
     const handlePasswordChange = async (e: React.FormEvent) => {

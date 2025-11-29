@@ -8,7 +8,6 @@ import ProfileContent from './profileContent'
 import { useParams, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Avatar from './userAvatar'
-import { authClient } from '@/lib/auth/client'
 import { useCustomerStore } from '@/lib/stores/customerStore'
 
 // --- Types ---
@@ -113,7 +112,7 @@ const AccountLayout: React.FC<AccountLayoutProps> = ({ initialTab, children }) =
                 >
                     <div className="flex items-center">
                         {/* Avatar */}
-                        <Avatar imageUrl={currentUserDetails.userImage} />
+                        <Avatar  />
                         <motion.span
                             className="text-sm sm:text-base lg:text-lg font-semibold tracking-wider truncate"
                             initial={{ opacity: 0, x: -10 }}
