@@ -1,9 +1,72 @@
 "use client"
-import React from 'react'
+
+import React, { useRef } from 'react'
+import { motion, useInView, Variants } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
 // Define the custom gold color for consistency
 const ACCENT_COLOR = '#D4A017'
+
+// Animation variants
+const headerVariants:Variants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: 'easeOut'
+        }
+    }
+}
+
+const containerVariants:Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.2
+        }
+    }
+}
+
+const cardVariants:Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: 'easeOut'
+        }
+    }
+}
+
+const imageVariants:Variants = {
+    hidden: { opacity: 0, scale: 1.1 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+            duration: 0.7,
+            ease: 'easeOut'
+        }
+    }
+}
+
+const textContentVariants:Variants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.6,
+            ease: 'easeOut',
+            delay: 0.2
+        }
+    }
+}
 
 // Reusable Offer Card Component
 interface OfferCardProps {
@@ -25,13 +88,26 @@ const OfferCard: React.FC<OfferCardProps> = ({
     linkText,
     linkHref,
 }) => {
+    const cardRef = useRef(null)
+    const isInView = useInView(cardRef, { once: true, margin: '-50px' })
     const isBuyOneGetOne = offerType === 'buyOneGetOne'
     
     return (
-        <div className="flex flex-col sm:flex-row w-full bg-white overflow-hidden">
+        <motion.div
+            ref={cardRef}
+            variants={cardVariants}
+            className="flex flex-col sm:flex-row w-full bg-white overflow-hidden"
+        >
             {/* Image Section */}
-            <div className="w-full sm:w-1/2 h-[250px] sm:h-[300px] lg:min-h-[350px] bg-gray-100 flex items-center justify-center">
-                <img
+            <motion.div
+                variants={imageVariants}
+                initial="hidden"
+                animate={isInView ? 'visible' : 'hidden'}
+                className="w-full sm:w-1/2 h-[250px] sm:h-[300px] lg:min-h-[350px] bg-gray-100 flex items-center justify-center overflow-hidden"
+            >
+                <motion.img
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.4 }}
                     src={imageSrc}
                     alt={imageAlt}
                     className="w-full h-full object-cover"
@@ -40,53 +116,86 @@ const OfferCard: React.FC<OfferCardProps> = ({
                         ;(e.target as HTMLImageElement).src = 'https://placehold.co/400x400/cccccc/333333?text=Image'
                     }}
                 />
-            </div>
+            </motion.div>
             
             {/* Text Section */}
-            <div
+            <motion.div
+                variants={textContentVariants}
+                initial="hidden"
+                animate={isInView ? 'visible' : 'hidden'}
                 className="w-full sm:w-1/2 p-6 sm:p-5 lg:p-6 xl:p-8 flex flex-col justify-center"
                 style={{ backgroundColor: isBuyOneGetOne ? 'transparent' : '#222222' }}
             >
-                <h3
+                <motion.h3
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
                     className="text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3 sm:mb-4"
                     style={{ color: isBuyOneGetOne ? '#000000' : ACCENT_COLOR }}
                 >
                     {title}
-                </h3>
-                <p 
+                </motion.h3>
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
                     className="text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 lg:mb-6" 
                     style={{ color: isBuyOneGetOne ? '#666666' : '#BBBBBB' }}
                 >
                     {description}
-                </p>
-                <a
-                    href={linkHref}
-                    className="flex items-center text-xs sm:text-sm font-semibold group"
-                    style={{ color: ACCENT_COLOR }}
+                </motion.p>
+                <motion.div
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
                 >
-                    {linkText}
-                    <ArrowRight
-                        size={16}
-                        className="ml-2 transition-transform duration-200 group-hover:translate-x-1"
-                    />
-                </a>
-            </div>
-        </div>
+                    <a
+                        href={linkHref}
+                        className="flex items-center text-xs sm:text-sm font-semibold group"
+                        style={{ color: ACCENT_COLOR }}
+                    >
+                        {linkText}
+                        <motion.div
+                            whileHover={{ x: 5 }}
+                            transition={{ duration: 0.2 }}
+                        >
+                            <ArrowRight
+                                size={16}
+                                className="ml-2"
+                            />
+                        </motion.div>
+                    </a>
+                </motion.div>
+            </motion.div>
+        </motion.div>
     )
 }
 
 // Main App Component
 export default function OffersItemSection() {
+    const sectionRef = useRef(null)
+    const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+
     return (
-        <div className="min-h-screen bg-white font-sans py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
+        <div ref={sectionRef} className="min-h-screen bg-white font-sans py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
-                <h2 className="text-base sm:text-lg lg:text-xl font-medium tracking-wider mb-8 sm:mb-10 lg:mb-12 text-gray-800 uppercase text-center lg:text-left">
+                <motion.h2
+                    variants={headerVariants}
+                    initial="hidden"
+                    animate={isInView ? 'visible' : 'hidden'}
+                    className="text-base sm:text-lg lg:text-xl font-medium tracking-wider mb-8 sm:mb-10 lg:mb-12 text-gray-800 uppercase text-center lg:text-left"
+                >
                     EXPLORE OFFERS OF THE WEEK
-                </h2>
+                </motion.h2>
                 
                 {/* Grid of Offer Cards */}
-                <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={isInView ? 'visible' : 'hidden'}
+                    className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8"
+                >
                     {/* Row 1, Card 1: Buy One Get One */}
                     <OfferCard
                         imageSrc="https://placehold.co/600x400/EFEFEF/333333?text=Woman+Steaming+Clothes"
@@ -130,7 +239,7 @@ export default function OffersItemSection() {
                         linkText="SHOP NOW"
                         linkHref="#"
                     />
-                </div>
+                </motion.div>
             </div>
         </div>
     )

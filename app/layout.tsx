@@ -1,14 +1,12 @@
 import type { Metadata } from 'next'
-import {Poppins} from 'next/font/google'
-import './globals.css'
+import { Poppins } from 'next/font/google'
 import HeaderItem from '@/components/common/header'
 import FooterItem from '@/components/common/footer'
-
-
+import './globals.css'
 
 const PoppinsFont = Poppins({
-   preload  :true,
-   weight : "400"
+    preload: true,
+    weight: '400',
 })
 export const metadata: Metadata = {
     title: 'Street7',

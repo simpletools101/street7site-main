@@ -14,7 +14,7 @@ export default function Page() {
     const router = useRouter();
 
     useEffect(()=>{
-        router.push("/profile/wishlist")
+        router.push("/profile/p")
     },[])
 
 }
