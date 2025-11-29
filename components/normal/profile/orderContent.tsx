@@ -117,7 +117,7 @@ const OrdersContent: React.FC = () => {
             date: '02-09-2025',
             image: 'https://placehold.co/64x64/EFEFEF/333333?text=Mask',
             imageAlt: 'Red Light Therapy Mask',
-            productLink: '/product/id',
+            productLink: '/product/red-light-therapy-mask/id',
         },
         {
             status: 'In transit',
@@ -127,7 +127,7 @@ const OrdersContent: React.FC = () => {
             date: '02-09-2025',
             image: 'https://placehold.co/64x64/EFEFEF/333333?text=Steamer',
             imageAlt: 'Garment Steamer',
-            productLink: '/product/id',
+            productLink: '/product/red-light-therapy-mask/id',
         },
         {
             status: 'Failed',
@@ -137,7 +137,7 @@ const OrdersContent: React.FC = () => {
             date: '02-09-2025',
             image: 'https://placehold.co/64x64/EFEFEF/333333?text=Bag',
             imageAlt: 'Green Bag',
-            productLink: '/product/id',
+            productLink: '/product/red-light-therapy-mask/id',
         },
         {
             status: 'Delivered',
@@ -147,7 +147,7 @@ const OrdersContent: React.FC = () => {
             date: '02-09-2025',
             image: 'https://placehold.co/64x64/EFEFEF/333333?text=Bodysuit',
             imageAlt: 'Brown Bodysuit',
-            productLink: '/product/id',
+            productLink: '/product/red-light-therapy-mask/id',
         },
     ]
 

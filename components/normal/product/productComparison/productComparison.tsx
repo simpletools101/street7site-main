@@ -53,7 +53,7 @@ const ProductComparison = () => {
 
                 {/* Right Columns: Comparison Table */}
                 <motion.div
-                    className="lg:col-span-2 border border-gray-200 rounded-lg overflow-hidden"
+                    className="lg:col-span-2 rounded-lg overflow-hidden"
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
@@ -86,7 +86,7 @@ const ProductComparison = () => {
                     </div>
 
                     {/* Price Header */}
-                    <div className="grid grid-cols-2 text-sm border-t border-gray-200 h-14 gap-2">
+                    <div className="grid grid-cols-2 text-sm  h-14 mb-18 gap-2">
                         <motion.div
                             className="flex justify-between items-center bg-gray-200 p-4"
                             initial={{ opacity: 0, y: -10 }}
@@ -110,7 +110,7 @@ const ProductComparison = () => {
                     </div>
 
                     {/* Comparison Features */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-1">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                         <div>
                             {comparisonFeatures.map((feature, index) => (
                                 <motion.div

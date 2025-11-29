@@ -26,7 +26,7 @@ export default function HeroSection() {
                     className="object-cover object-center"
                 />
                 {/* Subtle Dark Overlay to ensure text visibility */}
-                <div className="absolute inset-0 bg-black/10" /> 
+                <div className="absolute inset-0 bg-black/40" /> 
             </motion.div>
             
             {/* Content container - Aligning text to the left and setting text color to white */}
@@ -40,7 +40,7 @@ export default function HeroSection() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                 >
-                    SHOP Street 7
+                    Shop Street 7
                 </motion.h1>
                 
                 {/* Paragraph is removed as the screenshot's main title is the primary element. 
@@ -61,7 +61,7 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
                 >
                     <Link
-                        href={'/shop'}
+                        href={'/product/red-light-therapy-mask'}
                         aria-label="Shop Now"
                         // Apply dark button styles
                         className="flex items-center justify-center w-fit h-12 px-6 bg-black text-white hover:bg-neutral-800 transition-colors duration-300 font-medium group text-sm sm:text-base"

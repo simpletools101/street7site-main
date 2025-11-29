@@ -71,7 +71,7 @@ export default function PersonalizedDesign() {
                         </motion.p>
 
                         <Link
-                            href={'/personalized'}
+                            href={'/product/red-light-therapy-mask'}
                             aria-label="Shop Now Personalized Designs"
                             className="flex items-center justify-center w-fit h-11 px-5 mt-6 bg-black text-white hover:bg-neutral-800 transition-colors duration-300 font-medium group text-sm"
                         >
