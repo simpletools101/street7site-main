@@ -28,7 +28,7 @@ export default function WhatsNewItem(props: IWhatsNewProps) {
                 </div>
                 
                 {/* Content Section */}
-                <div className="bg-gradient-to-br from-yellow-200 via-amber-100 to-orange-200 w-full lg:w-[300px] min-h-[250px] sm:min-h-[300px] lg:h-[550px] flex flex-col justify-between relative px-6 sm:px-8 lg:px-10 py-8 lg:py-10">
+                <div className="bg-[#fee19b] w-full lg:w-[300px] min-h-[250px] sm:min-h-[300px] lg:h-[550px] flex flex-col justify-between relative px-6 sm:px-8 lg:px-10 py-8 lg:py-10">
                     <span className="text-sm sm:text-base leading-relaxed">
                         Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
                         classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,

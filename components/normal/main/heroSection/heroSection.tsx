@@ -34,7 +34,7 @@ export default function HeroSection() {
                 
                 {/* Title with staggered fade-in and text shadow */}
                 <motion.h1
-                    className="font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl " // Larger, bolder text with shadow
+                    className="font-extrabold tb text-4xl sm:text-5xl md:text-6xl lg:text-7xl " // Larger, bolder text with shadow
                     aria-label="Shop Street7"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}

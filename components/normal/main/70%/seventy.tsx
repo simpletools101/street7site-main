@@ -28,13 +28,13 @@ export default function SeventyOff() {
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                 >
                     <motion.h2 
-                        className="text-7xl sm:text-8xl lg:text-[140px] text-[#fec000] leading-none"
+                        className="text-7xl tb sm:text-8xl lg:text-[140px] text-[#fec000] leading-none"
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
                     >
                         70%
                     </motion.h2>
-                    <h2 className="text-7xl sm:text-8xl lg:text-[140px] leading-none">OFF</h2>
+                    <h2 className="text-6xl mt-4 sm:text-7xl lg:text-[120px] leading-none tb">OFF</h2>
                 </motion.div>
                 
                 {/* Description Section */}
@@ -73,6 +73,8 @@ export default function SeventyOff() {
                                 fill
                                 className="object-cover"
                             />
+                <div className="absolute inset-0 bg-black/20" /> 
+
                         </motion.div>
 
                         <Link
@@ -81,7 +83,7 @@ export default function SeventyOff() {
                             className="flex items-center gap-2 bottom-4 sm:bottom-6 absolute font-normal group"
                         >
                             <motion.span 
-                                className="uppercase text-sm sm:text-base"
+                                className="uppercase  text-[#fec000] font-bold text-sm sm:text-base"
                                 whileHover={{ letterSpacing: "0.1em" }}
                                 transition={{ duration: 0.3 }}
                             >
@@ -91,7 +93,7 @@ export default function SeventyOff() {
                                 whileHover={{ x: 4 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <MoveRight className="w-5 h-5" />
+                                <MoveRight className="w-5 h-5  text-[#fec000]" />
                             </motion.div>
                         </Link>
                     </div>

@@ -1,39 +1,14 @@
 'use client'
 import React from 'react'
 import { ArrowRight } from 'lucide-react'
+import PatternImage from "@/assets/Street 7 Pattern-2.png"
 
 // Define the custom gold color
 const ACCENT_COLOR = '#fec000'
 const LIGHT_GOLD_COLOR = '#FFEB99'
 
 // CSS for the geometric header pattern (replicated from the image)
-const HeaderPattern: React.FC = () => (
-    <div
-        className="w-full h-20 sm:h-24 md:h-32 mb-8 sm:mb-10 md:mb-12 overflow-hidden"
-        style={{ backgroundColor: LIGHT_GOLD_COLOR }}
-    >
-        {/* Simple SVG to replicate the diagonal/geometric pattern seen in the image */}
-        <svg
-            className="w-full h-full opacity-60"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-        >
-            <defs>
-                <pattern
-                    id="diagonal-stripes"
-                    width="10"
-                    height="10"
-                    patternUnits="userSpaceOnUse"
-                    patternTransform="rotate(45)"
-                >
-                    <rect width="5" height="10" fill={ACCENT_COLOR} />
-                </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#diagonal-stripes)" />
-        </svg>
-    </div>
-)
+
 
 export default function ReturnPolicy() {
     const bannerStyle: React.CSSProperties = {
@@ -60,13 +35,14 @@ export default function ReturnPolicy() {
         <div className="min-h-screen bg-white font-sans flex justify-center py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8">
             <div className="w-full max-w-4xl">
                 {/* Title */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 sm:mb-10 md:mb-12 text-center text-gray-900 leading-tight">
+                <h1 className="text-3xl tb sm:text-4xl md:text-4xl lg:text-4xl mb-8 sm:mb-10 md:mb-12 text-left text-gray-900 leading-tight">
                     Return policy
                 </h1>
 
                 {/* Banner Pattern */}
-                <div className="mb-8 sm:mb-10 md:mb-12 hidden sm:block" style={bannerStyle}></div>
-                <div className="mb-8 block sm:hidden" style={bannerStyleMobile}></div>
+                <div className='w-full h-[90px] mb-5'>
+                    <img src={PatternImage.src} className='h-[90px] w-full object-cover' />
+                </div>
 
                 {/* Content */}
                 <div className="text-sm sm:text-base text-gray-700 leading-relaxed mb-8 sm:mb-10 md:mb-12 space-y-4 sm:space-y-6 md:space-y-8">

@@ -119,7 +119,7 @@ export default function LearnPage() {
                     </motion.div>
 
                     <motion.h1
-                        className="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 tracking-wide"
+                        className="text-4xl tb sm:text-4xl lg:text-4xl font-light mb-6 tracking-wide"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
@@ -196,7 +196,7 @@ export default function LearnPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-4 tracking-wide">
+                        <h2 className="text-3xl tb sm:text-4xl lg:text-4xl font-light mb-4 tracking-wide">
                             Educational Articles
                         </h2>
                         <p className="text-gray-600 text-base sm:text-lg">
@@ -253,7 +253,7 @@ export default function LearnPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-4 tracking-wide">
+                        <h2 className="text-3xl tb sm:text-4xl lg:text-4xl font-light mb-4 tracking-wide">
                             Video Tutorials
                         </h2>
                         <p className="text-gray-600 text-base sm:text-lg">
@@ -309,7 +309,7 @@ export default function LearnPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-4 tracking-wide">
+                        <h2 className="text-3xl tb sm:text-4xl lg:text-5xl font-light mb-4 tracking-wide">
                             Frequently Asked Questions
                         </h2>
                         <p className="text-gray-600 text-base sm:text-lg">
@@ -358,34 +358,7 @@ export default function LearnPage() {
                 </div>
             </section>
 
-            {/* Download Guide CTA */}
-            <section className="py-16 sm:py-20 px-4 sm:px-8 lg:px-16 bg-gradient-to-br from-yellow-50 to-amber-50">
-                <div className="max-w-4xl mx-auto text-center">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-white flex items-center justify-center shadow-lg">
-                            <Download className="w-10 h-10 text-gray-800" />
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl font-light mb-4 tracking-wide">
-                            Download Our Complete Guide
-                        </h2>
-                        <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
-                            Get our comprehensive 50-page guide to LED therapy, including treatment protocols, safety guidelines, and expert tips.
-                        </p>
-                        <motion.button
-                            className="px-10 py-4 bg-black text-white font-semibold hover:bg-gray-800 transition-colors"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            Download Free Guide (PDF)
-                        </motion.button>
-                    </motion.div>
-                </div>
-            </section>
+           
         </div>
     )
 }

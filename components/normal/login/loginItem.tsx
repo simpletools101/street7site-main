@@ -89,7 +89,7 @@ export default function LoginItem() {
             <div className="w-full max-w-lg">
 
                 {/* Title */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl mb-8 sm:mb-10 md:mb-12 text-center text-gray-900 leading-tight">
+                <h1 className="text-3xl tb sm:text-4xl md:text-4xl mb-8 sm:mb-10 md:mb-12 text-center text-gray-900 leading-tight">
                     Log into your account
                 </h1>
 

@@ -124,14 +124,14 @@ const OfferCard: React.FC<OfferCardProps> = ({
                 initial="hidden"
                 animate={isInView ? 'visible' : 'hidden'}
                 className="w-full sm:w-1/2 p-6 sm:p-5 lg:p-6 xl:p-8 flex flex-col justify-center"
-                style={{ backgroundColor: isBuyOneGetOne ? 'transparent' : '#222222' }}
+                style={{ backgroundColor : '#222222' }}
             >
                 <motion.h3
                     initial={{ opacity: 0, y: 10 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3 sm:mb-4"
-                    style={{ color: isBuyOneGetOne ? '#000000' : ACCENT_COLOR }}
+                    className="text-2xl text-neutral-100 sm:text-2xl tb lg:text-4xl leading-normal mb-3 sm:mb-4"
+                    
                 >
                     {title}
                 </motion.h3>
@@ -139,8 +139,8 @@ const OfferCard: React.FC<OfferCardProps> = ({
                     initial={{ opacity: 0 }}
                     animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
-                    className="text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 lg:mb-6" 
-                    style={{ color: isBuyOneGetOne ? '#666666' : '#BBBBBB' }}
+                    className="text-xs text-neutral-300 sm:text-sm leading-relaxed mb-4 sm:mb-5 lg:mb-6" 
+                    
                 >
                     {description}
                 </motion.p>

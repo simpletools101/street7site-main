@@ -46,12 +46,7 @@ export default function FavSectionsCarousel() {
             "
         >
             <motion.h1
-                className="
-                    text-3xl md:text-4xl lg:text-5xl
-                    font-light
-                    text-center md:text-left
-                    w-full
-                "
+                              className="text-2xl mt-6 tb sm:text-2xl font-light text-center lg:text-left lg:text-3xl"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}

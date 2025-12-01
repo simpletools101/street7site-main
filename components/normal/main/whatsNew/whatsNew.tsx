@@ -108,7 +108,7 @@ function WhatsNewItem(props: IWhatsNewProps) {
                     variants={contentBoxVariants}
                     initial="hidden"
                     animate={isInView ? 'visible' : 'hidden'}
-                    className="bg-gradient-to-br from-yellow-200 via-amber-100 to-orange-200 w-full lg:w-[300px] min-h-[250px] sm:min-h-[300px] lg:h-[550px] flex flex-col justify-between relative px-6 sm:px-8 lg:px-10 py-8 lg:py-10"
+                    className="bg-[#fee19b] w-full lg:w-[300px] min-h-[250px] sm:min-h-[300px] lg:h-[550px] flex flex-col justify-between relative px-6 sm:px-8 lg:px-10 py-8 lg:py-10"
                 >
                     <motion.span
                         initial={{ opacity: 0 }}
@@ -154,7 +154,7 @@ export default function WhatsNewSection() {
                 variants={titleVariants}
                 initial="hidden"
                 animate={isInView ? 'visible' : 'hidden'}
-                className="mt-8 lg:mt-14 text-3xl sm:text-4xl font-light text-center lg:text-left"
+                className="mt-8 lg:mt-14 text-3xl tb sm:text-4xl font-light text-center lg:text-left"
             >
                 What's New
             </motion.h1>

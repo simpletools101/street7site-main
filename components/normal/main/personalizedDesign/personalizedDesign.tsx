@@ -9,7 +9,7 @@ export default function PersonalizedDesign() {
     return (
         <section className="min-h-[550px] lg:h-[550px] border-b border-b-amber-300">
             <motion.h1 
-                className="text-3xl sm:text-4xl font-light text-center lg:text-left lg:text-5xl"
+                className="text-2xl mt-6 tb sm:text-2xl font-light text-center lg:text-left lg:text-3xl"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -42,7 +42,7 @@ export default function PersonalizedDesign() {
                 </motion.div>
                 
                 <motion.div 
-                    className="flex items-center justify-center lg:justify-start bg-gradient-to-br from-yellow-200 via-amber-100 to-orange-200 py-8 lg:py-0 px-6 sm:px-12 lg:px-18"
+                    className="flex items-center justify-center lg:justify-start bg-[#fee19b] py-8 lg:py-0 px-6 sm:px-12 lg:px-18"
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -50,7 +50,7 @@ export default function PersonalizedDesign() {
                 >
                     <div className="space-y-3 sm:space-y-4 w-full max-w-md lg:max-w-sm">
                         <motion.h2 
-                            className="text-3xl sm:text-4xl lg:text-5xl text-center lg:text-left"
+                            className="text-3xl tb tracking-wide leading-normal sm:text-4xl lg:text-5xl text-center lg:text-left"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}

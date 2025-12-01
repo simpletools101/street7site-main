@@ -285,7 +285,7 @@ export default function RegisterItem() {
             >
                 {/* Title */}
                 <motion.h1
-                    className="text-3xl sm:text-4xl md:text-5xl mb-8 sm:mb-10 md:mb-12 text-center text-gray-900 leading-tight"
+                    className="text-3xl tb sm:text-4xl md:text-4xl mb-8 sm:mb-10 md:mb-12 text-center text-gray-900 leading-tight"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}

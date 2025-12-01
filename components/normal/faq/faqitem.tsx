@@ -129,7 +129,7 @@ export default function Faq() {
         <div className="min-h-screen bg-white p-4 sm:p-6 md:p-8 lg:p-16">
             <div className="max-w-6xl mx-auto">
                 {/* Title */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 sm:mb-10 lg:mb-12 text-gray-900 leading-tight">
+                <h1 className="text-3xl tb sm:text-4xl md:text-3xl lg:text-4xl mb-8 sm:mb-10 lg:mb-12 text-gray-900 leading-tight">
                     Frequently Asked Questions
                 </h1>
 

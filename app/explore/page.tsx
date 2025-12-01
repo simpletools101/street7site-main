@@ -110,10 +110,9 @@ export default function ExplorePage() {
                     <div className="absolute inset-0 " />
                     <motion.div
                         className="absolute inset-0 "
-                        
                         style={{
-                            backgroundImage: 'url("https://images.pexels.com/photos/1008206/pexels-photo-1008206.jpeg")',
-                            
+                            backgroundImage:
+                                'url("https://images.pexels.com/photos/1008206/pexels-photo-1008206.jpeg")',
                         }}
                     />
                 </div>
@@ -131,7 +130,7 @@ export default function ExplorePage() {
                     </motion.div>
 
                     <motion.h1
-                        className="text-4xl sm:text-5xl lg:text-7xl font-light mb-6 tracking-wide"
+                        className="text-4xl sm:text-5xl tb leading-normal text-white lg:text-7xl font-light mb-6 tracking-wide"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
@@ -140,7 +139,7 @@ export default function ExplorePage() {
                     </motion.h1>
 
                     <motion.p
-                        className="text-base sm:text-lg lg:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed"
+                        className="text-base sm:text-lg lg:text-xl text-neutral-200 mb-10 max-w-3xl mx-auto leading-relaxed"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
@@ -199,7 +198,7 @@ export default function ExplorePage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-4 tracking-wide">
+                        <h2 className="text-3xl tb sm:text-4xl lg:text-4xl font-light mb-4 tracking-wide">
                             Shop by Category
                         </h2>
                         <p className="text-gray-600 text-base sm:text-lg">Find the perfect solution for your needs</p>
@@ -265,7 +264,7 @@ export default function ExplorePage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-3xl sm:text-4xl font-light tracking-wide mb-4">Featured Products</h2>
+                        <h2 className="text-3xl sm:text-4xl font-light tracking-wide mb-4 tb">Featured Products</h2>
                         <p className="text-gray-600 text-base sm:text-lg">Our top picks curated for you</p>
                     </motion.div>
 
@@ -327,7 +326,7 @@ export default function ExplorePage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-3xl sm:text-4xl font-light tracking-wide mb-4">Shop Collections</h2>
+                        <h2 className="text-3xl sm:text-4xl font-light tracking-wide tb mb-4">Shop Collections</h2>
                         <p className="text-gray-600 text-base sm:text-lg">Curated picks for your beauty goals</p>
                     </motion.div>
 
@@ -370,7 +369,7 @@ export default function ExplorePage() {
             {/* CTA FOOTER */}
             <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center px-4">
                 <motion.h2
-                    className="text-4xl sm:text-5xl font-bold mb-6"
+                    className="text-4xl tb sm:text-5xl font-bold mb-6"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
