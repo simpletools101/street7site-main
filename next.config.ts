@@ -23,7 +23,6 @@ const nextConfig: NextConfig = {
                 hostname: 'cdn.shopify.com',
             },
         ],
-        domains: ['images.pexels.com', 'www.pexels.com', 'cdn.stocksnap.io', 'cdn.shopify.com'],
     },
 }
 
