@@ -23,7 +23,7 @@ export default function ReturnPolicy() {
     }
 
     const handleAskForReturn = () => {
-        console.log('Ask for return clicked')
+        
     }
 
     // Mock content to match the structure and length in the image (three paragraphs)

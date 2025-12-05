@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
 //         body: JSON.stringify({ email, password }),
 //       })
 //       const data = await res.json()
-//       console.log('Customer token:', data.accessToken)
+//       
 //     } catch (err) {
 //       console.error(err)
 //     }

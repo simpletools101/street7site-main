@@ -18,8 +18,12 @@ const nextConfig: NextConfig = {
                 protocol: 'https',
                 hostname: 'cdn.stocksnap.io',
             },
+            {
+                protocol: 'https',
+                hostname: 'cdn.shopify.com',
+            },
         ],
-        domains: ['images.pexels.com', 'www.pexels.com', 'cdn.stocksnap.io'],
+        domains: ['images.pexels.com', 'www.pexels.com', 'cdn.stocksnap.io', 'cdn.shopify.com'],
     },
 }
 

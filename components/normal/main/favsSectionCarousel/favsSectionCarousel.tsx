@@ -1,39 +1,69 @@
 'use client'
 
 import Carousel from '@/components/common/base/carousel'
-import Favitem from './favItem'
+import FavItem from './favItem'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { FetchedProducts, IN_MEMORY_FOR_PRODUCTS } from '@/lib/wishlistManager'
 
-/**
- * Current fetched products from shopify
- */
 interface ICurrentFetchedProductsFromShopify {
-    //to be used as the key
-    productID:string;
-    currentImageSoure:string;
-    productLink:string;
-    productDescription:string;
-
+    productID: string
+    currentImageSource: string
+    productLink: string
+    productDescription: string
 }
 
 export default function FavSectionsCarousel() {
-    /**
-     * The current fetched Products
-     */
-    const [currentProducts, setCurrentProducts] = useState<ICurrentFetchedProductsFromShopify[]>()
+    const [currentProducts, setCurrentProducts] = useState<ICurrentFetchedProductsFromShopify[]>([])
+
+    const reMapProducts = (fetchedProducts: FetchedProducts[]): ICurrentFetchedProductsFromShopify[] => {
+        return fetchedProducts.map((item) => ({
+            productID: item.id,
+            currentImageSource: item.featuredImage,
+            productDescription: item.title,
+            productLink: `/product/${item.title}`,
+        }))
+    }
+
+    const initalProductDeliver = async (): Promise<FetchedProducts[] | null> => {
+        try {
+            const res = await fetch(`/api/products`)
+            if (!res.ok) throw new Error('Failed to fetch products')
+
+            const data = await res.json()
+            
+
+            if (data) {
+                // Save in memory (must be a let not const)
+                
+            }
+
+            return data // ✅ return fetched products
+        } catch (err) {
+            console.error(err)
+            return null // return something predictable
+        }
+    }
 
     useEffect(() => {
         const fetchExistingProductsFromShopifyStore = async () => {
             try {
-                const res = await fetch('/api/product/red-light-therapy-masks')
-                if (!res.ok) throw new Error('Failed to fetch products')
-                const data = await res.json()
+                let fetchedData = await initalProductDeliver()
+                if (fetchedData) {
+                    if (fetchedData.length > 0) {
+                        setCurrentProducts(reMapProducts(fetchedData))
+                        
+                    } else {
+                        
+                    }
+                }
             } catch (err) {
-                console.error('Shopify fetch error:', err)
+                console.error('Error loading products', err)
             }
         }
-    }, [setCurrentProducts])
+
+        fetchExistingProductsFromShopifyStore()
+    }, []) // FIXED
 
     return (
         <section
@@ -46,7 +76,7 @@ export default function FavSectionsCarousel() {
             "
         >
             <motion.h1
-                              className="text-2xl mt-6 tb sm:text-2xl font-light text-center lg:text-left lg:text-3xl"
+                className="text-2xl mt-6 tb sm:text-2xl font-light text-center lg:text-left lg:text-3xl"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -55,6 +85,7 @@ export default function FavSectionsCarousel() {
             >
                 Your favs just got better
             </motion.h1>
+
             <motion.div
                 className="w-full"
                 initial={{ opacity: 0, y: 30 }}
@@ -63,40 +94,16 @@ export default function FavSectionsCarousel() {
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
             >
                 <Carousel>
-                    {[
-                        <Favitem
-                            key="sd"
+                    {currentProducts.map((v) => (
+                        <FavItem
+                            key={v.productID}
+                            description={v.productDescription}
+                            imgSource={v.currentImageSource}
+                            link={v.productLink}
+                            productID={v.productID}
                             onDidAddToWishList={() => {}}
-                            productID="dfsfsefe"
-                            imgSource="https://images.pexels.com/photos/3633850/pexels-photo-3633850.jpeg"
-                            link="/product/red-light-therapy-mask"
-                            description="The new Red Light mask comes with a lighter headband for better fitting and feeling when in use"
-                        />,
-                        <Favitem
-                            key="sdsf"
-                            onDidAddToWishList={() => {}}
-                            productID="dfsfsefe"
-                            imgSource="https://images.pexels.com/photos/21517415/pexels-photo-21517415.jpeg"
-                            link="/product/red-light-therapy-mask"
-                            description="The new Red Light mask comes with a lighter headband for better fitting and feeling when in use"
-                        />,
-                        <Favitem
-                            key="sasad"
-                            onDidAddToWishList={() => {}}
-                            productID="dfsfsefe"
-                            imgSource="https://images.pexels.com/photos/3018845/pexels-photo-3018845.jpeg"
-                            link="/product/red-light-therapy-mask"
-                            description="The new Red Light mask comes with a lighter headband for better fitting and feeling when in use"
-                        />,
-                        <Favitem
-                            key="sdsfasa"
-                            onDidAddToWishList={() => {}}
-                            productID="dfsfsefe"
-                            imgSource="https://images.pexels.com/photos/1395306/pexels-photo-1395306.jpeg"
-                            link="/product/red-light-therapy-mask"
-                            description="The new Red Light mask comes with a lighter headband for better fitting and feeling when in use"
-                        />,
-                    ]}
+                        />
+                    ))}
                 </Carousel>
             </motion.div>
         </section>

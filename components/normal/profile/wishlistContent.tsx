@@ -23,7 +23,7 @@ const WishlistContent: React.FC = () => {
         try {
             const cartId = await _createCartObjectFromProducts()
 
-            console.log('Current CartID', cartId)
+            
 
             const res = await fetch('/api/cart/checkout', {
                 method: 'POST',
@@ -33,7 +33,7 @@ const WishlistContent: React.FC = () => {
 
             if (!res.ok) throw new Error('Failed to get checkout URL')
             const data = await res.json()
-            console.log('Returned-checkout-url', data);
+            ;
             const receivedCheckoutURL = data;
 
             /**

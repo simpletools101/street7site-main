@@ -34,4 +34,4 @@ export async function POST(req: NextRequest) {
 //       if (!res.ok) throw new Error('Failed to add to cart')
 
 //       const data = await res.json()
-//       console.log('Cart created:', data)
+//       

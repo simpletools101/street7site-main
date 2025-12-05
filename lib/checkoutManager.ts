@@ -29,7 +29,7 @@ export async function _createCartObjectFromProducts() {
             customerAccessToken: accessToken,
         }
     };
-    console.log("Current-payload",payload)
+    
 
     const res = await fetch('/api/cart/create-2', {
         method: 'POST',

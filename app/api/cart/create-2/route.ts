@@ -5,7 +5,7 @@ export async function POST(req: Request) {
     try {
         const body = await req.json();
 
-        console.log("Current-received-body",body)
+        
 
         const { lines = [], buyerIdentity = null } = body
 

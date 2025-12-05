@@ -42,10 +42,10 @@ const ProductDetailPart = () => {
          */
         const CheckForWishlistAddition = () => {
             if (isAddedToWishlist) {
-                console.log("added item to wishlist")
+                
                 addItemToWishList(currentLabel)
             } else {
-                console.log("removed-item from wishlist")
+                
                 removeItemFromWishList(currentLabel)
             }
         }
@@ -276,7 +276,7 @@ const ProductDetailPart = () => {
                                     }}
                                 >
                                     <Heart
-                                        className={`w-6 h-6 text-gray-800 ${isAddedToWishlist ? 'fill-red-500' : ''}`}
+                                        className={`w-6 h-6 text-gray-800 ${isAddedToWishlist ? 'fill-[#fec000]' : ''}`}
                                         strokeWidth={1.5}
                                     />
                                 </motion.div>

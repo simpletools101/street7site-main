@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
 //       if (!res.ok) throw new Error('Failed to get checkout URL')
 
 //       const data = await res.json()
-//       console.log('Checkout URL:', data.checkoutUrl)
+//       
 
 //       if (data.checkoutUrl) {
 //         window.location.href = data.checkoutUrl

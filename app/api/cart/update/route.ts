@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
 //       if (!res.ok) throw new Error('Failed to update cart')
 
 //       const data = await res.json()
-//       console.log('Updated Cart:', data)
+//       
 //     } catch (err) {
 //       console.error(err)
 //     } finally {

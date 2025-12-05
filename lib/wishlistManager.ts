@@ -53,7 +53,7 @@ export function findProductByTitle(products: FetchedProducts[], title: string) {
     return products.find((p) => p.title.toLowerCase() === title.toLowerCase()) || null
 }
 
-let IN_MEMORY_FOR_PRODUCTS: FetchedProducts[] = []
+export let IN_MEMORY_FOR_PRODUCTS: FetchedProducts[] = []
 
 /**
  * This will run a query to fetch all the product so that we have them in memory;
@@ -67,15 +67,14 @@ export async function initalProductDeliver() {
         const res = await fetch(`/api/products`)
         if (!res.ok) throw new Error('Failed to fetch products')
         const data = await res.json()
-        console.log('Received-products', data)
+        
 
         if (data) {
-            
-            let normalizedData = normalizeProducts(data)
+        
             //we save the data that was received;
             IN_MEMORY_FOR_PRODUCTS = data;
 
-            console.log('SavedInMemoryData', IN_MEMORY_FOR_PRODUCTS)
+            
         }
     } catch (err) {
         console.error(err)
@@ -90,7 +89,7 @@ export function addItemToWishList(itemLabel: string) {
     let requestedProduct = findProductByTitle(IN_MEMORY_FOR_PRODUCTS, itemLabel)
 
     if (requestedProduct) {
-        console.log('DidRequestForAdditionOFProductToWishlist', requestedProduct)
+        
         /**
          * Add to the wishlist.
          */
@@ -106,7 +105,7 @@ export function addItemToWishList(itemLabel: string) {
             variantId : requestedProduct.variantId
         })
 
-        console.log("items",useWishlist.getState().items)
+        
        
     }
 }
@@ -116,7 +115,7 @@ export function removeItemFromWishList(itemLabel: string) {
 
 
     if (requestedProduct) {
-        console.log('DidRequestForRemovalOFProductToWishlist', requestedProduct)
+        
 
         /**
          * remove from the wishlist.

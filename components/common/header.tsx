@@ -21,7 +21,7 @@ export default function HeaderItem() {
     const { customer } = useCustomerStore()
 
     const gotoLoginPage = async () => {
-        console.log(customer)
+        
         if (customer && customer != null) {
             router.push('/profile/p')
         } else {

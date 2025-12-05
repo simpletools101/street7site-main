@@ -4,12 +4,13 @@ import { gql, GraphQLClient } from 'graphql-request'
 /**
  * The storefrom  accsess token,
  */
-const storefrontAccessToken = process.env.SHOPIFY_DEV_STORE_ACCESS_TOKEN! as string
+const storefrontAccessToken = process.env.SHOPIFY_STORE_ACCESS_TOKEN! as string
 
 /**
  * The storefront access endpoint;
  */
-const endpoint = process.env.SHOPIFY_DEV_ENDPOINT! as string
+const endpoint = process.env.SHOPIFY_ENDPOINT! as string
+
 
 
 /**

@@ -19,7 +19,7 @@ export const getCheckoutUrl = async (cartId: string) => {
         if (!data?.cart?.checkoutUrl) {
             throw new Error("Checkout URL missing — possible invalid Cart ID")
         }
-        console.log("Returned-checkout-url",data.cart.checkoutUrl)
+        
 
         return data.cart.checkoutUrl
     } catch (err: any) {
