@@ -3,6 +3,7 @@ import local from 'next/font/local'
 import HeaderItem from '@/components/common/header'
 import FooterItem from '@/components/common/footer'
 import './globals.css'
+import SiteMain from '@/components/common/site.main'
 
 
 export const metadata: Metadata = {
@@ -28,13 +29,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${NeueMontreal.className} ${Ragiften.variable} antialiased`}>
-                <div className="min-h-screen w-full max-w-[1440px] mx-auto">
-                    <HeaderItem />
-                    <div className="w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] md:w-[calc(100%-4rem)] lg:w-[calc(100%-6rem)] xl:w-[calc(100%-8rem)] mx-auto">
-                        {children}
-                    </div>
-                    <FooterItem />
-                </div>
+               <SiteMain>
+                    <div>{children}</div>
+               </SiteMain>
             </body>
         </html>
     )
